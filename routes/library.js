@@ -56,4 +56,13 @@ router.get("/", function (req, res) {
     res.json(bookArray);
 });
 
+router.post('/', function(req, res) {
+  const newBook = {
+    author: req.body.author,
+    pages: req.body.pages,
+    title: req.body.title,
+    isLoaned: req.body.isLoaned
+  }
+  bookArray.push(newBook);
+})
 module.exports = router;
