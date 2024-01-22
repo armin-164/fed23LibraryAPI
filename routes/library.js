@@ -70,9 +70,11 @@ router.post('/', function(req, res) {
     author: req.body.author,
     pages: req.body.pages,
     title: req.body.title,
-    isLoaned: req.body.isLoaned
+    isLoaned: req.body.isLoaned,
+    id: randomUUID()
   }
   bookArray.push(newBook);
+  res.json(newBook);
 })
 
 router.get('/:bookId', function(req, res) {
