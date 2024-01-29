@@ -39,4 +39,23 @@ router.get('/:bookId', function(req, res) {
     res.json(book);
   })
 })
+
+router.patch("/", (req, res) => {
+  fs.readFile("./books.json", (err, data) => {
+    if (err) console.log('err', err);
+
+    let books = JSON.parse(data);
+    let book = books.find(book => book.id == req.body.id);
+    console.log(book.isLoaned);
+    book.isLoaned = !book.isLoaned;
+
+    fs.writeFile("./books.json", JSON.stringify(books, null, 2), (err) => {
+      console.log('err', err);
+    })
+    
+    res.json(book)
+  })
+})
+
+
 module.exports = router;
