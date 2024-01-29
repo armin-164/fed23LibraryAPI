@@ -1,21 +1,31 @@
 var express = require("express");
+const fs = require("fs");
 var router = express.Router();
 
 
 router.get("/", function (req, res) {
-    res.json(bookArray);
+    fs.readFile("./books.json", (err, data) => {
+      let books = JSON.parse(data);
+      res.json(books)
+    })
 });
 
 router.post('/', function(req, res) {
-  const newBook = {
-    author: req.body.author,
-    pages: req.body.pages,
-    title: req.body.title,
-    isLoaned: req.body.isLoaned,
-    id: randomUUID()
-  }
-  bookArray.push(newBook);
-  res.json(newBook);
+  fs.readFile("./books.json", (err, data) => {
+    if (err) console.log('err', err);
+
+    let books = JSON.parse(data);
+
+    let newBook = req.body;
+    newBook.id = books.length + 1;
+    books.push(newBook);
+
+    fs.writeFile("./books.json", JSON.stringify(books, null, 2), err => {
+      if (err) console.log('err when add new book', err);
+    })
+
+    res.json(books)
+  })
 })
 
 router.get('/:bookId', function(req, res) {
