@@ -1,0 +1,58 @@
+[
+    {
+      "author": "J.R.R. Tolkien",
+      "pages": 1178,
+      "title": "The Lord of the Rings",
+      "isLoaned": false,
+      "id": 1
+    },
+    {
+      "author": "J.K. Rowling",
+      "pages": 336,
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "isLoaned": false,
+      "id": 2
+    },
+    {
+      "author": "George R.R. Martin",
+      "pages": 694,
+      "title": "A Game of Thrones",
+      "isLoaned": false,
+      "id": 3
+    },
+    {
+      "author": "Harper Lee",
+      "pages": 324,
+      "title": "To Kill a Mockingbird",
+      "isLoaned": false,
+      "id": 4
+    },
+    {
+      "author": "Agatha Christie",
+      "pages": 272,
+      "title": "Murder on the Orient Express",
+      "isLoaned": false,
+      "id": 5
+    },
+    {
+      "author": "F. Scott Fitzgerald",
+      "pages": 180,
+      "title": "The Great Gatsby",
+      "isLoaned": false,
+      "id": 6
+    },
+    {
+      "author": "Gabriel García Márquez",
+      "pages": 368,
+      "title": "One Hundred Years of Solitude",
+      "isLoaned": false,
+      "id": 7
+    },
+    {
+      "author": "Mark Twain",
+      "pages": 224,
+      "title": "The Adventures of Tom Sawyer",
+      "isLoaned": false,
+      "id": 8
+    }
+]
