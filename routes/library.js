@@ -29,11 +29,14 @@ router.post('/', function(req, res) {
 })
 
 router.get('/:bookId', function(req, res) {
-  let id = req.params.bookId;
-  let book = bookArray.find(book => book.id == id);
+  fs.readFile("./books.json", (err, data) => {
+    if (err) console.log('error retrieving', err);
+    
+    let books = JSON.parse(data);
+    let id = req.params.bookId;
 
-  if (book) {
-    res.json(book)
-  }
+    let book = books.find(book => book.id == id);
+    res.json(book);
+  })
 })
 module.exports = router;
